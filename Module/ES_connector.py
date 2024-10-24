@@ -47,3 +47,24 @@ class ElasticsearchQuery:
             return None
 
 
+if __name__ == "__main__":
+    # 定義 Elasticsearch 伺服器和索引
+    es_host = 'http://192.168.31.130:32327'
+    index_name = 'game_data_aaa'
+    
+    # 初始化 ElasticsearchQuery 類
+    es_query = ElasticsearchQuery(es_host, index_name)
+    
+    # 定義查詢的 query
+    query = {
+        "query": {
+            "match_all": {}
+        }
+    }
+    
+    # 獲取資料庫大小並進行查詢
+    search_result = es_query.search_with_size(query)
+    
+    # 顯示查詢結果
+    if search_result:
+        print(search_result[751])
