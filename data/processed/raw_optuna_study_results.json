@@ -1,0 +1,30 @@
+[
+    {
+        "trial_number": 0,
+        "value": 2.2472220829554965,
+        "params": {
+            "hidden_layers": 2,
+            "hidden_units": 320,
+            "dropout_rate": 0.7966668141660387,
+            "learning_rate": 0.005155903963673008,
+            "tree_depth": 13
+        },
+        "state": "TrialState.COMPLETE",
+        "datetime_start": "2024-11-01 00:30:30.737763",
+        "datetime_complete": "2024-11-01 00:31:00.292762"
+    },
+    {
+        "trial_number": 1,
+        "value": null,
+        "params": {
+            "hidden_layers": 1,
+            "hidden_units": 256,
+            "dropout_rate": 0.8480040207010648,
+            "learning_rate": 0.005446263033722706,
+            "tree_depth": 12
+        },
+        "state": "TrialState.FAIL",
+        "datetime_start": "2024-11-01 00:31:00.293788",
+        "datetime_complete": "2024-11-01 00:31:05.807335"
+    }
+]
