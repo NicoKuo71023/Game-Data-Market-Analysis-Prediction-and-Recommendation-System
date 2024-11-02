@@ -45,20 +45,20 @@ def recommond_game(df_result, user_input):
 
 
 # 讀取資料 (測試用)
-df = pd.read_json(r"C:\Users\student\Desktop\BDSE35_final_project\src\Data_analysis\Local_market_analysis\df.json")
+# df = pd.read_json(r"C:\Users\student\Desktop\BDSE35_final_project\src\Data_analysis\Local_market_analysis\df.json")
 
-AAA = pd.read_csv(r'C:\Users\student\Desktop\BDSE35_final_project\data\AAA\main_aaa.csv')
-AA = pd.read_csv(r'C:\Users\student\Desktop\BDSE35_final_project\data\AA\main_aa.csv')
-Indie = pd.read_csv(r'C:\Users\student\Desktop\BDSE35_final_project\data\Indie\main_indie.csv')
+# AAA = pd.read_csv(r'C:\Users\student\Desktop\BDSE35_final_project\data\AAA\main_aaa.csv')
+# AA = pd.read_csv(r'C:\Users\student\Desktop\BDSE35_final_project\data\AA\main_aa.csv')
+# Indie = pd.read_csv(r'C:\Users\student\Desktop\BDSE35_final_project\data\Indie\main_indie.csv')
 
-AAA = AAA[['steamId', 'name']]
-AA = AA[['steamId', 'name']]
-Indie = Indie[['steamId', 'name']]
+# AAA = AAA[['steamId', 'name']]
+# AA = AA[['steamId', 'name']]
+# Indie = Indie[['steamId', 'name']]
 
-steamId_name = pd.concat([AAA, AA, Indie], axis=0).reset_index(drop=True)
+# steamId_name = pd.concat([AAA, AA, Indie], axis=0).reset_index(drop=True)
 
 # 合併資料
-df_result = pd.merge(df, steamId_name, on='steamId', how='inner')
+# df_result = pd.merge(df, steamId_name, on='steamId', how='inner')
 
 # 測試
-print(recommond_game(df_result, 240))
+# print(recommond_game(df_result, 359550))
