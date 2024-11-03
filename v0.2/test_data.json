@@ -1,0 +1,162 @@
+{
+    "took": 7,
+    "timed_out": false,
+    "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": {
+            "value": 1,
+            "relation": "eq"
+        },
+        "max_score": 6.2186,
+        "hits": [
+            {
+                "_index": "game_data_aaa",
+                "_type": "_doc",
+                "_id": "7PMompIBG7z1a-665UKz",
+                "_score": 6.2186,
+                "_source": {
+                    "earlyAccess": false,
+                    "itemType": "game",
+                    "reviewScore": 96,
+                    "developers": [
+                        "Game Science"
+                    ],
+                    "itemCode": 0,
+                    "description": "Black Myth: Wukong is an action RPG rooted in Chinese mythology. You shall set out as the Destined One to venture into the challenges and marvels ahead, to uncover the obscured truth beneath the veil of a glorious legend from the past.",
+                    "unreleased": false,
+                    "owners": 22771854,
+                    "steamId": "2358720",
+                    "firstReleaseDate": 1724201375165,
+                    "features": [
+                        "Single-player",
+                        "Steam Achievements",
+                        "Steam Cloud",
+                        "Family Sharing"
+                    ],
+                    "revenue": 1025094722,
+                    "reviews": 843402,
+                    "price": 59.99,
+                    "reviewsSteam": 703200,
+                    "genres": [
+                        "Action",
+                        "Adventure",
+                        "RPG"
+                    ],
+                    "countryData": {
+                        "de": 0.5,
+                        "no": 0.1,
+                        "ru": 1.4,
+                        "hk": 0.6,
+                        "tw": 0.1,
+                        "fi": 0.1,
+                        "be": 0.1,
+                        "jp": 0.3,
+                        "dk": 0.1,
+                        "fr": 0.3,
+                        "nz": 0,
+                        "br": 0.7,
+                        "se": 0.1,
+                        "sg": 0.1,
+                        "gb": 0.8,
+                        "us": 3,
+                        "ca": 0.5,
+                        "ch": 0.1,
+                        "kr": 0.1,
+                        "cn": 80.4,
+                        "it": 0.1,
+                        "es": 0.2,
+                        "at": 0,
+                        "au": 0.3,
+                        "th": 0.1,
+                        "cz": 0.1,
+                        "pl": 0.2,
+                        "tr": 0.4,
+                        "nl": 0.1
+                    },
+                    "publishers": [
+                        "Game Science"
+                    ],
+                    "dlc": [
+                        {
+                            "steamId": 2672610,
+                            "revenue": 0,
+                            "releaseDate": 1724025600000,
+                            "price": 9.99,
+                            "genres": [
+                                "Action",
+                                "Adventure",
+                                "RPG"
+                            ],
+                            "name": "Black Myth: Wukong Deluxe Edition Upgrade",
+                            "copiesSold": 0
+                        }
+                    ],
+                    "totalRevenue": 1025094722,
+                    "avgPlaytime": 0,
+                    "copiesSold": 18986400,
+                    "steamPercent": 0.8337661044199564,
+                    "publishers_info": [
+                        {
+                            "name": "Game Science",
+                            "averageRevenue": 5.1572166092022294E8,
+                            "medianRevenue": 5.1572166092022294E8,
+                            "totalRevenue": 1.0314433218404459E9,
+                            "publishedGames": 2
+                        }
+                    ],
+                    "languages": [
+                        "English",
+                        "French",
+                        "German",
+                        "Spanish - Spain",
+                        "Japanese",
+                        "Korean",
+                        "Polish",
+                        "Portuguese - Brazil",
+                        "Russian",
+                        "Simplified Chinese",
+                        "Traditional Chinese",
+                        "Italian"
+                    ],
+                    "releaseDate": 1724201375165,
+                    "players": 22771854,
+                    "tags": [
+                        "Mythology",
+                        "Action RPG",
+                        "Action",
+                        "Souls-like",
+                        "RPG",
+                        "Combat",
+                        "Story Rich",
+                        "Singleplayer",
+                        "Drama",
+                        "Action-Adventure",
+                        "Dark Fantasy",
+                        "Atmospheric",
+                        "Adventure",
+                        "3D",
+                        "Fantasy",
+                        "Hack and Slash",
+                        "Third Person",
+                        "Difficult",
+                        "Music",
+                        "Violent"
+                    ],
+                    "followers": 1213935,
+                    "estimateDetails": {
+                        "playtimeBased": 19882208,
+                        "reviewBased": 25302060,
+                        "rankBased": 3779753.0785836177
+                    },
+                    "name": "Black Myth: Wukong",
+                    "wishlists": 4667300
+                }
+            }
+        ]
+    }
+}

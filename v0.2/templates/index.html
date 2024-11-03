@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分析報告</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+
+    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+</head>
+
+<body>
+    <div id="AnalysisReport">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <div class="row w-100 d-flex flex-wrap align-items-center">
+                    <div class="col-12 col-md-3 d-flex align-items-center">
+                        <a class="navbar-brand" href="#" style="color: #ffffff;">BDSE35</a>
+                        <h1 class="ml-3" style="color: #ffffff;">GameDigit</h1>
+                    </div>
+                    <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
+                        <div id="searchIdContainer" style="position: relative;">
+                            <input id="searchId" class="form-control" placeholder="Search for any game..." />
+                            <ul id="dropdown"></ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 d-flex justify-content-end">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/game-model">模型</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <tableau-viz id="tableauViz"       
+                        src='https://public.tableau.com/shared/F248G2G7M?:display_count=n&:origin=viz_share_link'      
+                        hide-toolbar hide-tabs>
+                    </tableau-viz>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirectToGameInfo() {
+            const searchId = document.getElementById('searchId').value;
+            if (searchId) {
+                window.location.href = `/game-info?steamId=${searchId}`;
+            } else {
+                alert('請輸入有效的 Steam ID');
+            }
+        }
+
+        let timeout;
+        document.getElementById('searchId').addEventListener('input', function () {
+            clearTimeout(timeout);
+            const query = this.value;
+            timeout = setTimeout(() => {
+                if (query.length >= 1) {
+                    fetch(`/search-game?q=${query}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            const dropdown = document.getElementById('dropdown');
+                            dropdown.innerHTML = '';
+                            if (data.length > 0) {
+                                dropdown.style.display = 'block';
+                                data.forEach(item => {
+                                    const li = document.createElement('li');
+                                    li.textContent = `${item.name} (${item.steamId})`;
+                                    li.onclick = () => selectGame(item.steamId, item.name);
+                                    dropdown.appendChild(li);
+                                });
+                            } else {
+                                dropdown.style.display = 'none';
+                            }
+                        });
+                } else {
+                    document.getElementById('dropdown').style.display = 'none';
+                }
+            }, 300);
+        });
+
+        function selectGame(steamId, gameName) {
+            // 选择游戏后，重定向到详细页面
+            window.location.href = `/game-info?steamId=${steamId}`;
+        }
+
+       
+    </script>
+</body>
+
+</html>
