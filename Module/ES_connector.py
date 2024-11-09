@@ -3,6 +3,29 @@ import json
 from requests.auth import HTTPBasicAuth
 
 class ElasticsearchQuery:
+    """
+    This class, `ElasticsearchQuery`, manages querying an Elasticsearch index, supporting optional API key authentication.
+
+    1. Initialization:
+    - Sets up the Elasticsearch host, index name, and optional API key.
+
+    2. `get_auth` Method:
+    - Returns HTTP basic authentication if an API key is provided, otherwise returns None.
+
+    3. `get_count` Method:
+    - Queries the index to retrieve the total document count using the `_count` endpoint.
+    - Returns the document count or None if there is an error.
+
+    4. `search_with_size` Method:
+    - Retrieves the document count and uses it to set the `size` parameter for a `_search` request.
+    - Executes a POST request with a query and returns all documents in the index up to the count limit.
+    - Returns the query results or None if there is an error.
+
+    Example usage:
+    - Defines Elasticsearch host, index, and optional API key.
+    - Initializes `ElasticsearchQuery`, defines a `match_all` query, and retrieves all documents in the index.
+    """
+
     def __init__(self, es_host, index_name, api_key=None):
         self.es_host = es_host
         self.index_name = index_name
