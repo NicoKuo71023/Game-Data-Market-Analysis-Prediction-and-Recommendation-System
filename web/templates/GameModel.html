@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模型</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../static/css/style_info.css">
+    <link rel="stylesheet" href="../static/css/style_model.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
+
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-md navbar-top">
+        <a href="/" style="text-decoration: none;">
+            <h2 class="logo"> <span class="fontcolor">Gama|</span><span class="orange">Dig</span><span
+                    class="fontcolor">it</span></h2>
+        </a>
+        <div class="navbar-collapse collapse">
+            <form class="d-flex me-auto">
+                <input id="searchId" class="form-control search-bar" type="search" placeholder="Find some games..."
+                    aria-label="Search" />
+                <ul id="dropdown"></ul>
+            </form>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#project">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Dashboard">DashBoard</a></li>
+                <li class="nav-item"><a class="nav-link" href="/game-model">Predict</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="GameModel">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="content">
+
+                        <form id="gameForm" action="/submit-game" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="col-md-12">
+                                        <h3 class="predictor">Price predictor</h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="publishedGames">Published Games</label>
+                                                    <input type="text" class="form-control x" id="publishedGames"
+                                                        name="publishedGames" placeholder="輸入已發行個數" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="averageRevenue">Average Revenue</label>
+                                                    <input type="text" class="form-control x" id="averageRevenue"
+                                                        name="averageRevenue" placeholder="輸入平均收入" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="medianRevenue">Median Revenue</label>
+                                                    <input type="text" class="form-control x" id="medianRevenue"
+                                                        name="medianRevenue" placeholder="輸入中位數收入" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="totalRevenue">Total Revenue</label>
+                                                    <input type="text" class="form-control x" id="totalRevenue"
+                                                        name="totalRevenue" placeholder="輸入總收入" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <!-- 隱藏的輸入欄位用於提交選擇結果 -->
+
+                                        <input type="hidden" id="hiddengenres" name="genres">
+                                        <input type="hidden" id="hiddenfeatures" name="features">
+                                        <input type="hidden" id="hiddentags" name="tags">
+
+
+
+                                    </div>
+                                    <div class="col-md-12">
+                                        <!-- 遊戲類型 -->
+                                        <div class="form-group">
+                                            <label for="genres">Genres</label>
+                                            <select class="form-control x" id="genres" name="genres[]"
+                                                onchange="updateSelected('genres', 'selectedgenres')"
+                                                oninput="filterGameOptions()">
+                                                <option value="">-- Please choice --</option>
+                                                {% for genre in genres %}
+                                                <option value="{{ genre }}">{{ genre }}</option>
+                                                {% endfor %}
+
+                                            </select>
+                                            <div id="selectedgenres" class="selected-items">
+
+                                            </div>
+                                        </div>
+
+                                        <!-- 風格與畫面 -->
+                                        <div class="form-group">
+                                            <label for="features">Features</label>
+                                            <select class="form-control x" id="features" name="features[]"
+                                                onchange="updateSelected('features', 'selectedfeatures')">
+                                                <option value="">-- Please choice --</option>
+                                                {% for feature in features %}
+                                                <option value="{{ feature }}">{{ feature }}</option>
+                                                {% endfor %}
+
+                                            </select>
+                                            <div id="selectedfeatures" class="selected-items"></div>
+                                        </div>
+
+                                        <!-- 遊戲玩法特徵 -->
+                                        <div class="form-group">
+                                            <label for="tags">Tags</label>
+                                            <select class="form-control x" id="tags" name="tags[]"
+                                                onchange="updateSelected('tags', 'selectedtags')">
+                                                <option value="">-- Please choice --</option>
+                                                {% for tag in tags %}
+                                                <option value="{{ tag }}">{{ tag }}</option>
+                                                {% endfor %}
+
+                                            </select>
+                                            <div id="selectedtags" class="selected-items"></div>
+                                        </div>
+
+                                        <button type="submit" class="custom-btn">Submit</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 ttest">
+                                    <div id="chart">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="me-auto">© 2024 BDSE35_第三組 版權所有 你隨便轉載 不會被起訴</p>
+                    </div>
+                    <div class="col-md-4"><a class="back-to-top ms-auto" href="#"> <i
+                                class="fa fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../static/js/script-chart.js"></script>
+        <script src="../static/js/script.js"></script>
+        <script src="../static/js/script_model.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

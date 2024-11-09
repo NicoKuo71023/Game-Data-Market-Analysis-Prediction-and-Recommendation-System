@@ -1,0 +1,74 @@
+/* 整體背景色和文字顏色 */
+body {
+    background-color: #2b2b2b;
+    color: #ffffff;
+}
+
+.placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.content {
+    padding: 32px;
+    background-color: rgba(43, 43, 43, 0.5);
+    border: 1px solid #2b2b2b;
+    border-radius: 16px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    /* border: solid 1px white; */
+
+}
+
+.description {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.custom-button {
+    background-color: #3f3044;
+    color: #ffffff;
+    line-height: 40px;
+    width: 100px;
+    display: inline-block;
+}
+
+.space {
+    margin-bottom: 20px;
+    height: 500px;
+}
+
+.form-control {
+    width: 450px;
+    /* 或根據需求調整大小 */
+}
+
+.selectedTag {
+    padding: 8px;
+    background-color: #f27100;
+    border-radius: 5px;
+    margin-top: 4px;
+
+}
+
+.search-results li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-results li:hover {
+    background-color: #ddd;
+}

@@ -1,0 +1,225 @@
+/* Placeholder 的樣式 */
+.placeholder {
+    display: flex;
+    /* 使用彈性佈局 */
+    justify-content: center;
+    /* 水平居中對齊 */
+    align-items: center;
+    /* 垂直居中對齊 */
+    margin-bottom: 20px;
+    /* 下方外邊距 */
+    max-width: 100%;
+    /* 最大寬度 100% */
+    height: auto;
+    /* 高度自動調整 */
+}
+
+.x {
+    margin: 20px 0px;
+}
+
+.content {
+    padding: 32px;
+    background-color: rgba(43, 43, 43, 0.5);
+    border: 1px solid #2b2b2b;
+    border-radius: 16px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    border: solid 1px white;
+
+}
+
+.submit-btn {
+    border: solid 1px white;
+    border-radius: 5px;
+}
+
+#selectedGameType {
+    /* border: solid 1px white; */
+    width: 100%;
+}
+
+#GameModel {
+    background-image: url("../images/bgimage.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+}
+
+#GameModel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+input {
+    background-color: black;
+}
+
+.form-group {
+    /* border: solid 1px white; */
+
+}
+
+.form-group select {
+    width: 100%;
+    background-color: rgba(43, 43, 43, 0.5);
+    color: #d6d6d6
+}
+
+.predict-plot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: blue; */
+}
+
+.ttest {
+    /* border: solid 1px red; */
+    margin: 64px 0px 32px 0px;
+}
+
+#chart {
+    top: 10%;
+    width: auto;
+    height: auto;
+    /* background-color: blue; */
+    display: flex;
+}
+
+.form-group select:focus {
+    background-color: rgba(43, 43, 43, 1);
+    outline: none;
+    /* 移除內建的藍色邊框 */
+    box-shadow: 0 0 5px 2px rgba(255, 143, 0, 0.5);
+    /* 設置橘色陰影 */
+    border-color: rgba(255, 143, 0, 0.8);
+    /* 可選：更改邊框顏色 */
+    color: #d6d6d6
+}
+
+.col-md-6 input::placeholder {
+    color: #d6d6d6
+}
+
+.col-md-6 input:focus {
+    color: #d6d6d6;
+    background-color: rgba(43, 43, 43, 1);
+    outline: none;
+    /* 移除內建的藍色邊框 */
+    box-shadow: 0 0 5px 2px rgba(255, 143, 0, 0.5);
+    /* 設置橘色陰影 */
+    border-color: rgba(255, 165, 0, 0.8);
+    /* 可選：更改邊框顏色 */
+}
+
+.col-md-6 input {
+    width: 100%;
+    background-color: rgba(43, 43, 43, 0.5);
+}
+
+.predictor {
+    /* border: solid 1px white; */
+    display: inline-block;
+    padding-bottom: 12px;
+    border-bottom: solid 1px orange;
+    margin: 0px 0px 20px 0px;
+
+}
+
+/* 描述文本樣式 */
+.description {
+    margin-top: 10px;
+    /* 上方外邊距 */
+    margin-bottom: 40px;
+    /* 下方外邊距 */
+    font-size: 16px;
+    /* 字體大小 */
+    color: #ffffff;
+    /* 字體顏色 */
+}
+
+
+/* 自定義按鈕樣式 */
+.custom-button {
+    background-color: #3f3044;
+    /* 按鈕背景顏色 */
+    color: #ffffff;
+    /* 按鈕文字顏色 */
+    line-height: 40px;
+    /* 確保文字垂直居中 */
+    width: 100px;
+    /* 按鈕寬度 */
+    display: inline-block;
+    /* 確保按鈕不會換行 */
+    border-radius: 5px;
+}
+
+
+/* 搜索框的樣式 */
+.search {
+    width: 450px;
+    /* 設定寬度，可以根據需求調整 */
+
+}
+
+.custom-btn {
+    background-color: #ff9300;
+    /* 設定自定義顏色 */
+    color: white;
+    /* 按鈕文字顏色 */
+    border: none;
+    /* 去掉邊框 */
+    padding: 8px;
+    width: 100%;
+    font-weight: 600;
+    margin-top: 12PX;
+    border: solid 1px white;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 47%;
+    left: 53%;
+
+    transition: 0.2s;
+}
+
+.custom-btn:hover {
+    background-color: #e68a00;
+    /* 滑鼠懸停時的顏色，稍微暗一點 */
+    border: solid 1px grey;
+    color: grey
+}
+
+.selected-items {
+    display: flex;
+    /* 使用 flexbox 讓項目並排 */
+    flex-wrap: wrap;
+    /* 如果空間不足，自動換行 */
+}
+
+.selected-item {
+    margin-right: 10px;
+    /* 增加項目之間的間距 */
+    cursor: pointer;
+    /* 提示可以點擊 */
+}
+
+
+/* 響應式樣式 */
+@media (max-width: 768px) {
+
+    /* 當螢幕寬度小於等於 768 像素時 */
+    .navbar-brand,
+    h1 {
+        font-size: 1.5rem;
+        /* 字體大小 */
+        white-space: normal;
+        /* 允許換行 */
+    }
+}

@@ -1,0 +1,98 @@
+/* 整體背景色和文字顏色 */
+body {
+    background-color: #2b2b2b;
+    /* 設置背景顏色 */
+    color: #ffffff;
+    /* 設置文字顏色 */
+}
+
+/* 圖片樣式 */
+img {
+    max-width: 100%;
+    /* 使圖片在其容器內最大寬度不超過 100% */
+    height: auto;
+    /* 高度自動調整，保持比例 */
+}
+
+
+/* 內容區域樣式 */
+.content {
+    padding: 32px;
+    /* 內邊距 */
+    background-color: #2b2b2b;
+    /* 背景顏色 */
+    border: 1px solid #2b2b2b;
+    /* 邊框顏色 */
+    border-radius: 16px;
+    /* 邊角圓滑 */
+    margin-top: 70px;
+    /* 調整以匹配導航欄的高度 */
+    /* 上方外邊距 */
+    margin-bottom: 30px;
+    /* 下方外邊距 */
+    overflow: auto;
+    /* 內容溢出時顯示滾動條 */
+    max-height: calc(100vh - 100px);
+    /* 確保內容不會超出視口 */
+}
+
+/* Tableau placeholder 的樣式 */
+.tableauPlaceholder {
+    overflow-x: hidden;
+    /* 隱藏水平滾動條 */
+    display: flex;
+    /* 使用彈性佈局 */
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+    height: 600px;
+    /* 設定高度 */
+    width: 100%;
+    /* 寬度 100% */
+    margin-bottom: 20px;
+    /* 下方外邊距 */
+}
+
+/* 描述文本樣式 */
+.description {
+    margin: 10px 0 40px;
+    /* 上、下方外邊距 */
+    font-size: 16px;
+    /* 字體大小 */
+    color: #ffffff;
+    /* 字體顏色 */
+}
+
+/* 自定義按鈕樣式 */
+.custom-button {
+    background-color: #3f3044;
+    /* 按鈕背景顏色 */
+    color: #ffffff;
+    /* 按鈕文字顏色 */
+    line-height: 40px;
+    /* 確保文字垂直居中 */
+    width: 100px;
+    /* 按鈕寬度 */
+    display: inline-block;
+    /* 確保按鈕不會換行 */
+}
+
+
+.form-control {
+    width: 450px;
+    /* 或根據需求調整大小 */
+}
+
+/* 響應式樣式 */
+@media (max-width: 768px) {
+
+    /* 當螢幕寬度小於等於 768 像素時 */
+    .navbar-brand,
+    h1 {
+        font-size: 1.5rem;
+        /* 字體大小 */
+        white-space: normal;
+        /* 允許換行 */
+    }
+}

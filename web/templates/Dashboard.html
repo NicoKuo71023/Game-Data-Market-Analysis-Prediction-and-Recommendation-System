@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/images/cat.jpg" type="image/x-icon">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../static/css/style_dashboard.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-md navbar-top">
+        <a href="/" style="text-decoration: none;">
+            <h2 class="logo"> <span class="fontcolor">Gama|</span><span class="orange">Dig</span><span
+                    class="fontcolor">it</span></h2>
+        </a>
+        <div class="navbar-collapse collapse">
+            <form class="d-flex me-auto">
+                <input id="searchId" class="form-control search-bar" type="search" placeholder="Find some games..."
+                    aria-label="Search" />
+                <ul id="dropdown"></ul>
+            </form>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#project">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Dashboard">DashBoard</a></li>
+                <li class="nav-item"><a class="nav-link" href="/game-model">Predict</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="AnalysisReport">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="margin-top: 100px;">
+                    <!-- <div class="content"> -->
+                    <!-- Tableau 圖表 -->
+                    <div class='tableauPlaceholder' id='viz1730689412248' style='position: relative'><noscript><a
+                                href='#'><img alt=' '
+                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DA&#47;DA_tableau&#47;1&#47;1_rss.png'
+                                    style='border: none' /></a></noscript><object class='tableauViz'
+                            style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='embed_code_version' value='3' />
+                            <param name='site_root' value='' />
+                            <param name='name' value='DA_tableau&#47;1' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image'
+                                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DA&#47;DA_tableau&#47;1&#47;1.png' />
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' />
+                            <param name='language' value='zh-TW' />
+                        </object></div>
+                    <script type='text/javascript'>
+                        var divElement = document.getElementById('viz1730689412248');
+                        var vizElement = divElement.getElementsByTagName('object')[0];
+                        if (divElement.offsetWidth > 800) {
+                            vizElement.style.minWidth = '1450px';
+                            vizElement.style.maxWidth = '100%'; vizElement.style.minHeight = '900px';
+                            vizElement.style.maxHeight = (divElement.offsetWidth * 0.75) + 'px';
+                        }
+                        else if (divElement.offsetWidth > 500) {
+                            vizElement.style.minWidth = '1450px';
+                            vizElement.style.maxWidth = '100%';
+                            vizElement.style.minHeight = '900px';
+                            vizElement.style.maxHeight = (divElement.offsetWidth * 0.75) + 'px';
+                        }
+                        else {
+                            vizElement.style.width = '100%'; vizElement.style.minHeight = '1850px';
+                            vizElement.style.maxHeight = (divElement.offsetWidth * 1.77) + 'px';
+                        }
+                        var scriptElement = document.createElement('script');
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+                    </script>
+
+                    <!-- </div> -->
+                    <!-- 強硬遮掉tableau -->
+                    <div style="background-color: #2b2b2b; margin-top: -120px;"></div>
+
+
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="me-auto">© 2024 BDSE35_第三組 版權所有 你隨便轉載 不會被起訴</p>
+                </div>
+                <div class="col-md-4"><a class="back-to-top ms-auto" href="#"> <i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../static/js/script.js"></script>
+</body>
+
+</html>

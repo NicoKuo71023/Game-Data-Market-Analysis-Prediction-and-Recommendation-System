@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/images/cat.jpg" type="image/x-icon">
+    <title>Gama|Digit</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-md navbar-top">
+        <a href="/" style="text-decoration: none;">
+            <h2 class="logo"> <span class="fontcolor">Gama|</span><span class="orange">Dig</span><span
+                    class="fontcolor">it</span></h2>
+        </a>
+
+        <div class="navbar-collapse collapse">
+            <form class="d-flex me-auto">
+                <input id="searchId" class="form-control search-bar" type="search" placeholder="Find some games..."
+                    aria-label="Search" />
+                <ul id="dropdown"></ul>
+            </form>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#project">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Dashboard">DashBoard</a></li>
+                <li class="nav-item"><a class="nav-link" href="/game-model">Predict</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10 ">
+                    <h1 id="floatingTitle" class="header_slogan_L col-md-10 disappear">Try to make a good game?</h1>
+                    <p id="floatingTitle_s" class="header_slogan_s disappear_left"> Building games with minimal risk,
+                        maximum
+                        impact</p>
+                    <button id="floatingTitle_s_2" class="btn3 disappear_rotate"
+                        onclick="window.location.href='/game-model';">Try
+                        out!</button>
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+    <div id="cross">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <div id="circle">
+        <i class="fa fa-circle" aria-hidden="true"></i>
+    </div>
+    <div id="triangle">
+        <i class="fa fa-play " aria-hidden="true"></i>
+    </div>
+    <div id="square">
+        <i class="fa fa-square" aria-hidden="true"></i>
+    </div>
+    <section class="section" id="project">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <h1>Our Project</h1>
+                    <div class="row text-white">
+                        <div class="col-md-4 d-flex align-items-center">
+                            <div class="icon-wrapper d-flex align-items-center justify-content-center me-3"><i
+                                    class="fa fa-pie-chart fa-2x text-white"></i></div>
+                            <div>
+                                <h5>Marketing</h5>
+                                <p class="mb-0">We provide accurate and insightful market analysis reports with unique
+                                    perspectives.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center">
+                            <div class="icon-wrapper d-flex align-items-center justify-content-center me-3"><i
+                                    class="fa fa-line-chart fa-2x text-white"></i></div>
+                            <div>
+                                <h5>Predict</h5>
+                                <p class="mb-0">We offer precise first-month sales forecasts and pricing strategies.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center">
+                            <div class="icon-wrapper d-flex align-items-center justify-content-center me-3"><i
+                                    class="fa fa-database fa-2x text-white"></i></div>
+                            <div>
+                                <h5>Database</h5>
+                                <p class="mb-0">We provide a comprehensive and robust Steam games database.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="market">
+        <h1>Gaming and Shape the Future</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 stat-item">
+                    <span class="stat-number">+</span>
+                    <span id="growth" class="stat-number">60</span>
+                    <span class="stat-number">%</span>
+                    <h5 class="stat-title">Growth Rate</h5>
+                    <hr />
+                    <p class="stat-description">The global gaming market has experienced explosive growth after the
+                        pandemic.</p>
+                </div>
+                <div class="col-md-3 stat-item"><span id="game-sold" class="stat-number">580</span><span
+                        class="stat-number">M</span>
+                    <h5 class="stat-title">Games Sold</h5>
+                    <hr />
+                    <p class="stat-description">In 2023, 580 million games were sold, and players' enthusiasm for gaming
+                        was at an all-time high.</p>
+                </div>
+                <div class="col-md-3 stat-item"><span id="game-released" class="stat-number">14000</span>
+                    <h5 class="stat-title">Game Released</h5>
+                    <hr />
+                    <p class="stat-description">In 2023, 14,000 games were released, and the gaming market is full of
+                        vitality.</p>
+                </div>
+                <div class="col-md-3 stat-item"><span id="peak-player" class="stat-number">33.6</span>
+                    <span class="stat-number">M</span>
+                    <h5 class="stat-title">Peak Players</h5>
+                    <hr>
+                    <p class="stat-description">In 2023, the peak concurrent player count reached 33.6 million,
+                        showcasing the massive popularity and engagement within the gaming community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="photo-section">
+        <h2>Find Some Good Games !</h2>
+        <div class="photo-gallery">
+            <a href="/game-info?steamId=2358720">
+                <div class="photo-item" title="Black Myth: Wukong"><img
+                        src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg?t=1729817855"
+                        data-title="test" alt="Workshop Photo 1" /></div>
+            </a>
+
+            <a href="/game-info?steamId=271590">
+                <div class="photo-item" title="Grand Theft Auto V"><img
+                        src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1730486236" />
+                </div>
+            </a>
+
+            <a href="/game-info?steamId=105600">
+                <div class="photo-item" title="Terraria"><img
+                        src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/105600/header.jpg?t=1729752058"
+                        alt="Workshop Photo 3" /></div>
+            </a>
+
+            <a href="/game-info?steamId=252490">
+                <div class="photo-item" title="Rust"><img
+                        src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/252490/header.jpg?t=1729817855"
+                        alt="Workshop Photo 4" /></div>
+            </a>
+
+            <a href="/game-info?steamId=346110">
+                <div class="photo-item" title="ARK: Survival Evolved"><img
+                        src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/346110/header.jpg?t=1729817855"
+                        alt="Workshop Photo 5" /></div>
+            </a>
+
+
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="me-auto">© 2024 BDSE35_第三組 版權所有 你隨便轉載 不會被起訴</p>
+                </div>
+                <div class="col-md-4"><a class="back-to-top ms-auto" href="#"> <i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../static/js/script.js"></script>
+    <script src="../static/js/move.js"></script>
+</body>
+
+
+</html>
