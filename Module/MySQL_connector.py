@@ -1,6 +1,33 @@
 import pymysql
 
 class MySQLConnector:
+    """
+    This class, `MySQLConnector`, manages MySQL database connections and provides methods to connect, disconnect, and execute SQL queries.
+
+    1. `__init__`: Initializes database connection settings.
+    - Parameters: 
+        - `host`: Database server IP address.
+        - `user`: Username for login.
+        - `password`: Login password.
+        - `port`: Port for database connection, default is 3306.
+
+    2. `connectDB`: Establishes a connection to a specified database.
+    - Parameter: 
+        - `database`: Target database name.
+    - Prints a message confirming connection.
+
+    3. `disconnect`: Closes the database connection.
+    - Prints a message confirming disconnection.
+
+    4. `execute_query`: Executes a given SQL query and returns the result.
+    - Parameter:
+        - `query`: SQL query to execute.
+    - Returns: Query result.
+    - Raises an exception if there’s no active connection.
+
+    Example usage:
+    Creates an instance of `MySQLConnector`, connects to `g3_db`, and executes a `SHOW TABLES` query.
+    """
     def __init__(self, host, user, password, port=3306):
         """
         初始化資料庫連線設置。

@@ -7,6 +7,31 @@ import matplotlib.pyplot as plt
 from sklearn.tree import export_text
 
 def feature_selector(full_table, tree_depth):
+    """
+    This function, `feature_selector`, selects important features from a dataset using a Decision Tree Regressor.
+
+    1. Data Preparation:
+    - Splits `full_table` into features (X) and target (Y), then into training and testing sets.
+
+    2. Model Training:
+    - Initializes and trains a Decision Tree Regressor with specified depth (`tree_depth`).
+    - Computes MSE and R² for both training and testing sets.
+
+    3. Extract Tree Structure:
+    - Uses `export_text` to extract the decision tree structure.
+    - Organizes feature names by tree levels in a dictionary, `tree_layers`.
+
+    4. Feature Selection:
+    - Collects unique features used in tree levels 1 through `tree_depth`.
+    - Forms a `features_tuple` of these features and counts the total.
+
+    5. Filter Dataset:
+    - Filters `full_table` to include only selected features and the first column.
+    - Returns a `new_table` with these selected columns.
+
+    This function outputs a filtered dataset with the most relevant features based on the tree structure.
+    """
+
     X_full = full_table.drop(columns="sales").values
     Y_full = full_table['sales'].values
     X_train, X_test, y_train, y_test = train_test_split(X_full, Y_full, test_size=0.2, random_state=42)
