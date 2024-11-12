@@ -43,7 +43,7 @@ The model building for this project aims to predict a game’s first-month sales
 
 1. **Feature Extraction**: Extract features from game tags, genres, developers, and other relevant data.
 2. **Data Processing and Cleaning**: Preprocess features, including normalization and encoding of categorical variables.
-3. **Model Selection and Training**: Train several machine learning models (Linear, Polynomial+ridge, XGBoost, DNN) and deep learning models to compare predictive performance.
+3. **Model Selection and Training**: Train several machine learning models and deep learning models (Linear, Polynomial+ridge, XGBoost, DNN) to compare predictive performance.
 4. **Model Evaluation and Optimization**: Evaluate models using metrics like RMSE and R-square, and fine-tune them with hyperparameter optimization using Optuna to enhance prediction accuracy.
 
 The ultimate goal is to establish an accurate predictive model that effectively forecasts a game’s first-month sales and provides valuable insights for game developers and marketing strategies.
