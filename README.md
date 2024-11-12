@@ -1,53 +1,54 @@
-# GamaDigit-遊戲數據探索者-遊戲市場分析、預測與推薦系統
+# GamaDigit - Game Data Explorer: Market Analysis, Prediction, and Recommendation System
 
-## 專案簡介
+## Project Overview
 
-本專案旨在深入分析全球遊戲市場，特別關注單機遊戲的市場動態與玩家需求，並開發一個基於數據的推薦系統。隨著全球遊戲市場收入的持續增長，單機遊戲憑藉其創新性和深度的遊戲體驗，仍然在市場中占有重要地位。本專案透過市場數據分析、玩家行為研究以及遊戲類型的深入探討，為遊戲開發者和行銷團隊提供有價值的洞察。
+This project aims to conduct an in-depth analysis of the global game market, with a particular focus on the dynamics and player demands in the single-player game segment, while also developing a data-driven recommendation system. With the sustained growth of the global game market, single-player games continue to hold an important place, thanks to their innovation and immersive experience. By analyzing market data, studying player behavior, and exploring game genres, this project seeks to offer valuable insights to game developers and marketing teams.
 
-## 專案目標
+## Project Objectives
 
-- **提升市場洞察力**：為開發者提供關於玩家偏好和市場需求的深刻洞見。
-- **降低開發風險**：通過市場需求分析和推薦系統預測新遊戲的市場潛力，減少商業失敗風險。
-- **增加玩家忠誠度**：推薦系統根據玩家偏好精準推薦遊戲，增強玩家的黏著度和滿意度。
-- **支援市場策略**：提供市場趨勢分析，協助公司制定有效的市場策略，發掘“藍海”市場並避免進入“紅海”。
+- **Enhance Market Insight**: Provide developers with deep insights into player preferences and market demands.
+- **Reduce Development Risks**: Minimize the risk of commercial failure by analyzing market demands and predicting the potential of new games through a recommendation system.
+- **Increase Player Loyalty**: Boost player engagement and satisfaction by providing game recommendations tailored to player preferences.
+- **Support Market Strategies**: Offer market trend analysis to assist companies in developing effective strategies, identifying “blue ocean” markets, and avoiding “red ocean” competition.
 
-## 系統架構
+## System Architecture
 
-- **硬體架構**：使用Harvester Cluster/RKE2 (K8S)集群，包含Elasticsearch集群和MySQL。
-- **分層服務架構**：分為資料來源層、數據處理與分析層、商業應用層和展示層。
-- **數據管道**：包括數據來源、數據湖、數據倉庫的ETL與分析流程，支持推薦系統的計算和市場分析。
+- **Hardware Architecture**: Utilizes a Harvester Cluster/RKE2 (Kubernetes) setup, incorporating Elasticsearch clusters and MySQL databases.
+- **Layered Service Architecture**: Comprises a data source layer, data processing and analysis layer, business application layer, and presentation layer.
+- **Data Pipeline**: Includes data sources, data lake, and data warehouse with ETL and analysis processes, supporting computations for the recommendation system and market analysis.
 
-## 推薦系統機制
+## Recommendation System Mechanism
 
-推薦系統基於以下流程：
-1. 使用TF-IDF生成遊戲標籤和類型的文字向量。
-2. 計算遊戲之間的餘弦相似度。
-3. 排序並推薦與用戶需求高度匹配的前5款遊戲。
+The recommendation system operates through the following process:
 
-## 市場分析
+1. Generate textual vectors for game tags and genres using TF-IDF.
+2. Calculate cosine similarity between games.
+3. Rank and recommend the top 5 games that closely match user preferences.
 
-### 全球市場趨勢
-- 市場收入預估將持續增長，單機遊戲依然有顯著的市場佔有率和增長潛力。
-- 市場喜好偏好於特定遊戲類型，如動作和冒險類遊戲，尤其是在美國、中國、俄羅斯等主要市場。
+## Market Analysis
 
-### 遊戲類型分析
-- 分析不同遊戲類型的市場表現，並根據遊戲數量、銷量和銷售額追踪5-10年內的變化趨勢。
-- 提供針對不同國家和地區的市場建議，幫助開發商了解各地區市場的特定需求。
+### Global Market Trends
 
-## 模型建置
+- Market revenue is projected to continue growing, with single-player games maintaining a significant market share and growth potential.
+- Preferences lean towards specific game genres, such as action and adventure, particularly in major markets like the United States, China, and Russia.
 
-本專案的模型建置旨在基於遊戲的特徵資料（如標籤、類型）以及開發商相關資料，預測遊戲的首月銷量。通過不同的模型進行對比，包括線性回歸、多項式嶺迴歸、XGBoost及深度神經網路（DNN），尋找最佳的預測方案。模型建置的主要步驟包括：
+### Game Genre Analysis
 
-1. **數據特徵提取**：從遊戲的標籤（tags）、遊戲類型、開發商等資料中提取特徵。
-2. **資料處理與清理**：對特徵進行預處理，包含數值標準化、類別變數編碼等操作。
-3. **模型選擇與訓練**：使用多種機器學習(Linear, Polynomial+ridge, Xgboost, DNN)和深度學習模型進行訓練，以便比較其預測表現。
-4. **模型評估與調優**：通過RMSE、R-square等指標評估模型表現，並通過Optuna進行超參數調整，以提升預測準確度。
+- Analyze the market performance of various game genres, tracking changes over the past 5-10 years in terms of game count, sales, and revenue.
+- Provide region-specific market recommendations, helping developers understand the particular demands in different areas.
 
-最終目標是建立一個準確的預測模型，能夠有效預測遊戲的首月銷量，並為遊戲開發者和行銷策略提供參考依據。
+## Model Building
 
-## 參考文獻
+The model building for this project aims to predict a game’s first-month sales based on game features (such as tags and genres) and developer-related information. A variety of models will be compared, including linear regression, polynomial ridge regression, XGBoost, and deep neural networks (DNN), to determine the best predictive solution. The main steps in model building include:
 
-- **市場數據來源**：Gamalytic API、Bain & Company市場報告
-- **技術文獻**：TF-IDF技術文件、餘弦相似度計算等
+1. **Feature Extraction**: Extract features from game tags, genres, developers, and other relevant data.
+2. **Data Processing and Cleaning**: Preprocess features, including normalization and encoding of categorical variables.
+3. **Model Selection and Training**: Train several machine learning models (Linear, Polynomial+ridge, XGBoost, DNN) and deep learning models to compare predictive performance.
+4. **Model Evaluation and Optimization**: Evaluate models using metrics like RMSE and R-square, and fine-tune them with hyperparameter optimization using Optuna to enhance prediction accuracy.
 
----
+The ultimate goal is to establish an accurate predictive model that effectively forecasts a game’s first-month sales and provides valuable insights for game developers and marketing strategies.
+
+## References
+
+- **Market Data Sources**: Gamalytic API, Bain & Company Market Reports
+- **Technical Documentation**: TF-IDF technical papers, cosine similarity calculation, and more.
